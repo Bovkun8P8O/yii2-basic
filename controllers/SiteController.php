@@ -10,6 +10,8 @@ use yii\filters\VerbFilter;
 use app\models\LoginForm;
 use app\models\ContactForm;
 use app\models\EntryForm;
+use app\models\EntryForm2;
+
 
 class SiteController extends Controller
 {
@@ -157,4 +159,21 @@ class SiteController extends Controller
             return $this->render('entry', ['model' => $model]);
         }
     }
+
+    public function actionForm()
+    {
+        $model = new EntryForm2();
+
+        if ($model->load(Yii::$app->request->post()) && $model->validate()) {
+            // данные в $model удачно проверены
+
+            // делаем что-то полезное с $model ...
+
+            return $this->render('form-auto', ['model' => $model]);
+        } else {
+            // либо страница отображается первый раз, либо есть ошибка в данных
+            return $this->render('form1', ['model' => $model]);
+        }
+    }
+
 }
