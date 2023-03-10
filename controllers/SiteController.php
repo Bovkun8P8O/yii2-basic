@@ -176,4 +176,8 @@ class SiteController extends Controller
         }
     }
 
+    public function actionForm2()
+    {
+        return $this->render('form2');
+    }
 }
