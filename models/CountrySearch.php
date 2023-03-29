@@ -23,14 +23,6 @@ class CountrySearch extends Country
     }
 
     /**
-     * @inheritdoc
-     */
-    public static function tableName()
-    {
-        return 'country';
-    }
-
-    /**
      * {@inheritdoc}
      */
     public function scenarios()
